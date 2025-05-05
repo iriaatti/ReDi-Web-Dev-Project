@@ -15,7 +15,7 @@
 }
 
 .card:hover .cardBase{
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 .cardFront, .cardBack {
@@ -35,7 +35,7 @@
   background-color: aliceblue;
   border: 5px solid #000;
   border-radius: 10px;
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 @media screen and(min-width:1024) {
