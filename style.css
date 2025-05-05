@@ -1,5 +1,42 @@
+.card {
+  background-color: transparent;
+  width: 150px;
+  height: 200px;
+  perspective: 1000px;
+}
 
+.cardBase {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
 
-@media screen and(min-width:1024){
-    
+.card:hover .cardBase{
+  transform: rotateY(180deg);
+}
+
+.cardFront, .cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cardFront{
+  background-color: #16174d;
+  border: 5px solid #16174d;
+  border-radius: 10px;
+}
+
+.cardBack{
+  background-color: aliceblue;
+  border: 5px solid #000;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+}
+
+@media screen and(min-width:1024) {
 }
