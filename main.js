@@ -1,8 +1,11 @@
-let card = []
+let card = [];
 
 class Cards {
-    constructor(emoji, flipStatus){
-        this.emoji = emoji;
-        this.flipStatus = flipStatus; //boolean
-    }
+  constructor(emoji, flipStatus) {
+    this.emoji = emoji;
+    this.flipStatus = flipStatus; //boolean
+  }
+  flip() {
+    this.flipStatus = !this.flipStatus;
+  }
 }
