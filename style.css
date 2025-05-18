@@ -1,3 +1,10 @@
+.table{
+display: grid;
+grid-template-columns: repeat(5, 200px);
+grid-template-rows: repeat(2, 1fr);
+row-gap: 20px;
+}
+
 .card {
   background-color: transparent;
   width: 150px;
@@ -14,9 +21,9 @@
   transform-style: preserve-3d;
 }
 
-.card:hover .cardBase{
+/* .card:hover .cardBase{
   transform: rotateY(-180deg);
-}
+} */
 
 .cardFront, .cardBack {
   position: absolute;
@@ -25,18 +32,24 @@
   backface-visibility: hidden;
 }
 
-.cardFront{
-  background-color: #16174d;
-  border: 5px solid #16174d;
+.cardBack{
+  background-color: #59ca7f;
+  border: 5px solid rgb(167, 4, 104);
   border-radius: 10px;
 }
 
-.cardBack{
+.cardFront{
+  font-size: 80px;
+  line-height: 200px;
   background-color: aliceblue;
-  border: 5px solid #000;
+  border: 5px solid #047500;
   border-radius: 10px;
   transform: rotateY(-180deg);
 }
 
 @media screen and(min-width:1024) {
+}
+
+#hidden-section{
+  display: none;
 }
