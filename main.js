@@ -42,11 +42,12 @@ function showCardsOnTable() {
   let numberFlipped = 0;
   let cardOne;
   deckOfCards.forEach(card => {
-    let cardDiv = document.getElementsByClassName("card")[0];
-    let cloneCard = cardDiv.cloneNode(true);
-    let cardFront = cloneCard.getElementsByClassName("cardFront")[0];
-    let cardBase = cloneCard.getElementsByClassName("cardBase")[0];
-    card.cardBase = cardBase;
+    let cardDiv = document.getElementsByClassName("card")[0]; // assigning a div to a variable to use as a base for the cards
+    let cloneCard = cardDiv.cloneNode(true); // making a copy of the base card
+    let cardFront = cloneCard.getElementsByClassName("cardFront")[0]; // assigning a child node from "card" to a variable to put the emoji
+    let cardBase = cloneCard.getElementsByClassName("cardBase")[0]; // assigning a child node from "card" to a variable to add an event listener
+    card.cardBase = cardBase; // saving the new variable in the "card" property of the same name
+    
     //reference: https://www.w3schools.com/howto/howto_css_flip_card.asp
     cardBase.addEventListener("click", function () {
       numberFlipped += 1;
