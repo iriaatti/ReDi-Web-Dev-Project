@@ -2,22 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width" />
     <title>Memory Game</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hi</h1>
-    <button id="play-button">Start!</button>
-    <section id="hidden-section">
-      <div class="card">
-        <div class="cardBase">
-          <div class="cardFront"></div>
-          <div class="cardBack"></div>
+    <header>
+      <h1>Memory Game</h1>
+      <button id="play-button">Let's play!</button>
+    </header>
+    <main>
+      <section id="hidden-section">
+        <div class="card">
+          <div class="cardBase">
+            <div class="cardFront"></div>
+            <div class="cardBack"></div>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="table"></section>
+      </section>
+      <section class="table"></section>
+    </main>
     <script src="main.js"></script>
   </body>
 </html>
