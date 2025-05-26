@@ -1,8 +1,48 @@
-.table{
-display: grid;
-grid-template-columns: repeat(5, 200px);
-grid-template-rows: repeat(2, 1fr);
-row-gap: 20px;
+*{
+  box-sizing: border-box;
+}
+
+body{
+  text-align: center;
+}
+
+header{
+  padding-bottom: 1rem;
+  font-family:'Lucida Console';
+  font-size: 30px;
+  color: black;
+}
+
+h1{
+  background-color: #b57eda;
+  border-radius: 10px;
+}
+
+#play-button{
+  padding: 10px 15px;
+  color: #047500;
+  background-color: aliceblue;
+  border-radius: 10px;
+  border: 1px solid #047500;
+  box-shadow: 3px 5px 8px rgb(163, 163, 163);
+}
+
+#play-button:hover{
+  background-color: #7400c2;
+  border: 1px solid #7400c2;
+  color: #ffffff;
+  box-shadow: 3px 5px 6px rgb(90, 90, 90);
+  cursor: pointer;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+  justify-items: center;
+  justify-content: center;
 }
 
 .card {
@@ -25,31 +65,44 @@ row-gap: 20px;
   transform: rotateY(-180deg);
 } */
 
-.cardFront, .cardBack {
+.cardFront,
+.cardBack {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
 }
 
-.cardBack{
-  background-color: #59ca7f;
-  border: 5px solid rgb(167, 4, 104);
+.cardBack {
+  background-color: #79cc76;
+  border: 1px solid #000000;
   border-radius: 10px;
 }
 
-.cardFront{
+.cardFront {
   font-size: 80px;
   line-height: 200px;
   background-color: aliceblue;
-  border: 5px solid #047500;
+  border: 1px solid #047500;
   border-radius: 10px;
   transform: rotateY(-180deg);
 }
 
-@media screen and(min-width:1024) {
+@media screen and(min-width: 1024px) {
+  body{
+    background-color: #b57eda;
+  }
+
+  .table {
+  display: grid;
+  grid-template-columns: repeat(6, 200px);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 20px;
+  justify-items: center;
+  justify-content: center;
+}
 }
 
-#hidden-section{
+#hidden-section {
   display: none;
 }
