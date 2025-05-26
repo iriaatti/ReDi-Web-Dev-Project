@@ -8,7 +8,7 @@ body{
 
 header{
   padding-bottom: 1rem;
-  font-family:'Lucida Console';
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 30px;
   color: black;
 }
@@ -88,14 +88,12 @@ h1{
   transform: rotateY(-180deg);
 }
 
-@media screen and(min-width: 1024px) {
-  body{
-    background-color: #b57eda;
-  }
+@media screen and (min-width: 1024px) {
+ 
 
   .table {
   display: grid;
-  grid-template-columns: repeat(6, 200px);
+  grid-template-columns: repeat(6, 150px);
   grid-template-rows: repeat(2, 1fr);
   row-gap: 20px;
   justify-items: center;
