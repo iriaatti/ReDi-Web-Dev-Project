@@ -1,4 +1,4 @@
-let emojis = ["🦜", "🪼", "🐢", "🐈", "🐘"];
+let emojis = ["🦜", "🪼", "🐢", "🐈", "🐘", "🐇"];
 let deckOfCards = [];
 
 class Cards {
@@ -30,7 +30,6 @@ function generateCards() {
   });
 
   shuffleArray(deckOfCards);
-
   showCardsOnTable();
 
   console.log(deckOfCards);
