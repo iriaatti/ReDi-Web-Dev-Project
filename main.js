@@ -1,5 +1,7 @@
 let emojis = ["🦜", "🪼", "🐢", "🐈", "🐘", "🐇"];
 let deckOfCards = [];
+let score = 0;
+let scoreElement = document.getElementById("score");
 
 class Cards {
   constructor(emoji, cardBase) {
@@ -21,8 +23,10 @@ function shuffleArray(array) {
 
 // Function to generate pairs of cards in an array
 function generateCards() {
+  score = 0;
+  scoreElement.innerText = score;
   deckOfCards = [];
-  emojis.forEach(emoji => {
+  emojis.forEach((emoji) => {
     let card = new Cards(emoji);
     let card2 = new Cards(emoji);
     deckOfCards.push(card);
@@ -35,19 +39,27 @@ function generateCards() {
   console.log(deckOfCards);
 }
 
+// SCORE COUNTING FUNCTION
+function addScore() {
+  setTimeout(() => {
+    score += 1;
+    scoreElement.innerText = score;
+  }, 1400);
+}
+
 // Function to add the array of cards to the HTML and adds an event listener to check the pairs
 function showCardsOnTable() {
   let gameTable = document.getElementsByClassName("table")[0];
   gameTable.innerHTML = "";
   let numberFlipped = 0;
   let cardOne;
-  deckOfCards.forEach(card => {
+  deckOfCards.forEach((card) => {
     let cardDiv = document.getElementsByClassName("card")[0]; // assigning a div to a variable to use as a base for the cards
     let cloneCard = cardDiv.cloneNode(true); // making a copy of the base card
     let cardFront = cloneCard.getElementsByClassName("cardFront")[0]; // assigning a child node from "card" to a variable to put the emoji
     let cardBase = cloneCard.getElementsByClassName("cardBase")[0]; // assigning a child node from "card" to a variable to add an event listener
     card.cardBase = cardBase; // saving the new variable in the "card" property of the same name
-    
+
     //reference: https://www.w3schools.com/howto/howto_css_flip_card.asp
     cardBase.addEventListener("click", function () {
       numberFlipped += 1;
@@ -57,6 +69,9 @@ function showCardsOnTable() {
       } else if (numberFlipped === 2) {
         if (card.emoji === cardOne.emoji) {
           numberFlipped = 0;
+          cardOne.cardBase.style.boxShadow = "5px 5px 15px green";
+          card.cardBase.style.boxShadow = "5px 5px 15px green";
+          addScore();
         } else {
           // Asynchronous Programming
           setTimeout(function () {
@@ -79,5 +94,3 @@ function showCardsOnTable() {
 let playButton = document.getElementById("play-button");
 
 playButton.addEventListener("click", generateCards);
-
-// TODO - score counter
