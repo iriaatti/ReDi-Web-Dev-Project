@@ -1,24 +1,26 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   text-align: center;
 }
 
-header{
+header {
   padding-bottom: 1rem;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
   color: black;
+  margin: 20px 5px;
 }
 
-h1{
+h1 {
   background-color: #b57eda;
   border-radius: 10px;
+  margin: 20px 25px;
 }
 
-#play-button{
+#play-button {
   padding: 10px 15px;
   color: #047500;
   background-color: aliceblue;
@@ -27,7 +29,7 @@ h1{
   box-shadow: 3px 5px 8px rgb(163, 163, 163);
 }
 
-#play-button:hover{
+#play-button:hover {
   background-color: #7400c2;
   border: 1px solid #7400c2;
   color: #ffffff;
@@ -35,20 +37,34 @@ h1{
   cursor: pointer;
 }
 
+p {
+  color: #ffffff;
+  background-color: #047500;
+  margin: auto;
+  margin-top: 15px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 25px;
+  max-width: 25px;
+  height: 25px;
+  max-height: 25px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .table {
   display: grid;
-  grid-template-columns: repeat(3, 150px);
+  grid-template-columns: repeat(3, 8rem);
   grid-template-rows: repeat(4, 1fr);
   row-gap: 20px;
-  column-gap: 20px;
   justify-items: center;
   justify-content: center;
 }
 
 .card {
   background-color: transparent;
-  width: 150px;
-  height: 200px;
+  width: 100px;
+  height: 150px; 
   perspective: 1000px;
 }
 
@@ -59,11 +75,10 @@ h1{
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  border-radius: 10px;
+  transition: box-shadow 1s, transform 1s;
+  transition-delay: 1s, 0s;
 }
-
-/* .card:hover .cardBase{
-  transform: rotateY(-180deg);
-} */
 
 .cardFront,
 .cardBack {
@@ -80,25 +95,97 @@ h1{
 }
 
 .cardFront {
-  font-size: 80px;
-  line-height: 200px;
+  font-size: 60px;
+  line-height: 150px;
   background-color: aliceblue;
   border: 1px solid #047500;
   border-radius: 10px;
   transform: rotateY(-180deg);
 }
 
-@media screen and (min-width: 1024px) {
- 
+footer {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    padding-bottom: 1rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 30px;
+    color: black;
+  }
+
+  h1 {
+    margin: 20px 120px;
+  }
 
   .table {
-  display: grid;
-  grid-template-columns: repeat(6, 150px);
-  grid-template-rows: repeat(2, 1fr);
-  row-gap: 20px;
-  justify-items: center;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    background-color: transparent;
+    width: 150px;
+    height: 200px; /* rem - em units or vh - vw */
+    perspective: 1000px;
+  }
+
+  .cardFront {
+    font-size: 80px;
+    line-height: 200px;
+    background-color: aliceblue;
+    border: 1px solid #047500;
+    border-radius: 10px;
+    transform: rotateY(-180deg);
+  }
 }
+
+@media screen and (min-width: 1024px) {
+  header {
+    padding-bottom: 1rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 30px;
+    color: black;
+  }
+
+  h1 {
+    margin: 20px 120px;
+  }
+
+  .table {
+    display: grid;
+    grid-template-columns: repeat(6, 150px);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 20px;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    background-color: transparent;
+    width: 150px;
+    height: 200px; /* rem - em units or vh - vw */
+    perspective: 1000px;
+  }
+
+  .cardFront {
+    font-size: 80px;
+    line-height: 200px;
+    background-color: aliceblue;
+    border: 1px solid #047500;
+    border-radius: 10px;
+    transform: rotateY(-180deg);
+  }
 }
 
 #hidden-section {
