@@ -9,8 +9,22 @@
   <body>
     <header>
       <h1>Memory Game</h1>
-      <button id="play-button">Let's play!</button>
-      <p id="score">--</p>
+      <div class="rules-container">
+      <p id="rules">How to play:</p>
+      <ol>
+        <li>Select two cards by clicking them and memorize the pictures.</li>
+        <li>Keep trying until you find all pairs!</li>
+      </ol>
+      </div>
+      <div id="wrapper">
+        <label for="emoji-category">Choose a category:</label>
+        <select id="emoji-category">
+          <option value="animals">Animals</option>
+          <option value="fruits">Fruits</option>
+        </select>
+      </div>
+        <button id="play-button">START</button>
+      <p id="score">--</p></div>
     </header>
     <main>
       <section id="hidden-section">
