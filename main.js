@@ -1,7 +1,9 @@
-let emojis = ["🦜", "🪼", "🐢", "🐈", "🐘", "🐇"];
+let animalEmojis = ["🦜", "🪼", "🐢", "🐈", "🐘", "🐇"];
+let fruitEmojis = ["🍌", "🍉", "🍑", "🥑", "🥥", "🍇"];
 let deckOfCards = [];
 let score = 0;
 let scoreElement = document.getElementById("score");
+let categoryElement = document.getElementById("emoji-category");
 
 class Cards {
   constructor(emoji, cardBase) {
@@ -26,12 +28,21 @@ function generateCards() {
   score = 0;
   scoreElement.innerText = score;
   deckOfCards = [];
-  emojis.forEach((emoji) => {
+  if(categoryElement.value === "animals"){
+  animalEmojis.forEach((emoji) => {
     let card = new Cards(emoji);
     let card2 = new Cards(emoji);
     deckOfCards.push(card);
     deckOfCards.push(card2);
-  });
+  })
+  }else{
+    fruitEmojis.forEach((emoji) => {
+    let card = new Cards(emoji);
+    let card2 = new Cards(emoji);
+    deckOfCards.push(card);
+    deckOfCards.push(card2);
+  })
+  };
 
   shuffleArray(deckOfCards);
   showCardsOnTable();
