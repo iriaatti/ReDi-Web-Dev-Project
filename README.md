@@ -13,9 +13,7 @@ The purpose of this project was learning/practice and the choice of creating a s
 ## FEATURES
 1. Memory game mechanics
 2. Score counter
-3. Category selector using API
+3. Category selector
 
-## SETUP
-Go to https://emoji-api.com/ to create your own API Key
-
-Replace the key in the variable XXXX with your own newly generated API Key
+## NOTE
+For the version with API, checkout API branch.
