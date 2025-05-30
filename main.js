@@ -1,7 +1,23 @@
-let emojis = ["🦜", "🪼", "🐢", "🐈", "🐘", "🐇"];
+let categoryRequest = "https://emoji-api.com/categories";
+let APIKEY = "?access_key=c79d7e63e77c858752af3b506afdb7bc777245a6";
+let emojiRequest = "https://emoji-api.com/categories/";
 let deckOfCards = [];
 let score = 0;
 let scoreElement = document.getElementById("score");
+let categoryElement = document.getElementById("emoji-category");
+getCategories();
+async function getCategories() {
+  let categoryResponse = await fetch(categoryRequest + APIKEY);
+  let categoryList = await categoryResponse.json();
+  console.log(categoryList);
+  categoryList.forEach((category) => {
+    let categoryOption = document.createElement("option");
+    categoryOption.setAttribute("value", category.slug);
+    let optionText = document.createTextNode(category.slug);
+    categoryOption.appendChild(optionText);
+    categoryElement.appendChild(categoryOption);
+  });
+}
 
 class Cards {
   constructor(emoji, cardBase) {
@@ -22,13 +38,18 @@ function shuffleArray(array) {
 }
 
 // Function to generate pairs of cards in an array
-function generateCards() {
+async function generateCards() {
   score = 0;
   scoreElement.innerText = score;
   deckOfCards = [];
-  emojis.forEach((emoji) => {
-    let card = new Cards(emoji);
-    let card2 = new Cards(emoji);
+  let emojiResponse = await fetch(
+    emojiRequest + categoryElement.value + APIKEY
+  );
+  let emojiList = await emojiResponse.json();
+  emojiList = emojiList.slice(9, 15);
+  emojiList.forEach((emoji) => {
+    let card = new Cards(emoji.character);
+    let card2 = new Cards(emoji.character);
     deckOfCards.push(card);
     deckOfCards.push(card2);
   });
