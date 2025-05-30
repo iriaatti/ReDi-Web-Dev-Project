@@ -18,4 +18,4 @@ The purpose of this project was learning/practice and the choice of creating a s
 ## SETUP
 Go to https://emoji-api.com/ to create your own API Key
 
-Replace the key in the variable XXXX with your own newly generated API Key
+Replace the key in the variable APIKEY with your own newly generated API Key
