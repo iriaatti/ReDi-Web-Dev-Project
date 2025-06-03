@@ -27,22 +27,21 @@ function shuffleArray(array) {
 function generateCards() {
   score = 0;
   scoreElement.innerText = score;
-  deckOfCards = [];
-  if(categoryElement.value === "animals"){
-  animalEmojis.forEach((emoji) => {
-    let card = new Cards(emoji);
-    let card2 = new Cards(emoji);
-    deckOfCards.push(card);
-    deckOfCards.push(card2);
-  })
-  }else{
+  if (categoryElement.value === "animals") {
+    animalEmojis.forEach((emoji) => {
+      let card = new Cards(emoji);
+      let card2 = new Cards(emoji);
+      deckOfCards.push(card);
+      deckOfCards.push(card2);
+    });
+  } else {
     fruitEmojis.forEach((emoji) => {
-    let card = new Cards(emoji);
-    let card2 = new Cards(emoji);
-    deckOfCards.push(card);
-    deckOfCards.push(card2);
-  })
-  };
+      let card = new Cards(emoji);
+      let card2 = new Cards(emoji);
+      deckOfCards.push(card);
+      deckOfCards.push(card2);
+    });
+  }
 
   shuffleArray(deckOfCards);
   showCardsOnTable();
