@@ -42,6 +42,7 @@ function shuffleArray(array) {
 async function generateCards() {
   score = 0;
   scoreElement.innerText = score;
+  deckOfCards = [];
   let emojiResponse = await fetch(
     emojiRequest + categoryElement.value + APIKEY
   );
