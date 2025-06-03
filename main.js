@@ -27,6 +27,7 @@ function shuffleArray(array) {
 function generateCards() {
   score = 0;
   scoreElement.innerText = score;
+  deckOfCards = [];
   if (categoryElement.value === "animals") {
     animalEmojis.forEach((emoji) => {
       let card = new Cards(emoji);
